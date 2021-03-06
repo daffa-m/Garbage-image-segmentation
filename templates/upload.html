@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+
+<html> 
+
+<head> 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script> 
+    <meta charset=utf-8 /> 
+
+    <script src="{{ url_for('static', filename='upload.js') }}"></script> 
+    <script src="{{ url_for('static', filename='upload1.js') }}"></script> 
+
+    
+</head> 
+
+<body> 
+    
+    <div class="container">
+	<div class="row">
+	  <div class="col-md-6">
+	      <form method="post" action="#" id="#">
+           
+              
+              
+              
+              <div class="form-group files">
+                <label>Upload Your File </label>
+                <input type="file" class="form-control" multiple="">
+              </div>
+              
+            
+          </form>
+	      
+	      
+	  </div>
+	   <div class="col-md-6">
+	      <form method="post" action="#" id="#">
+           
+              
+              
+              
+              <div class="form-group files color">
+                <label>Upload Your File </label>
+                <input type="file" class="form-control" multiple="">
+              </div>
+              
+            
+          </form>
+	      
+	      
+	  </div>
+	</div>
+</div>
+    
+    
+    <form action="http://127.0.0.1:5000/uploader" method="POST" enctype="multipart/form-data"> 
+        
+        <div class="file-upload-wrapper">
+          <input type='file' name='file' class="file-upload" onchange="readURL(this);" /> 
+</div>
+        <img id="blah" src="#" alt="your image" /> 
+        <button type="submit" class="btn btn-primary">Submit & predict</button> 
+
+    </form> 
+   
+    <img id="blah" src="{{url_for('static', filename=hasli)}}" alt="your image" />
+    <h2>asli : {{ akurasi }}</h2>
+    <img id="blah" src="{{url_for('static', filename=hpreprocessed)}}" alt="your image" />
+    <h2>preprocessed : {{ akurasi1 }}</h2>
+    <img src="{{url_for('static', filename=asli)}}" alt="your image" />
+    <img src="{{url_for('static', filename=preprocessed)}}" alt="your image" />
+    <img src="{{url_for('static', filename=gt)}}" alt="your image" />
+    
+</body> 
+
+</html> 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cards Gallery</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='cards-gallery.css') }}">
+    <style>
+        body {
+  background-image: url('../static/bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+    </style>
+</head>
+<body>
+   <section class="gallery-block cards-gallery">
+	    <div class="container">
+	        <div class="heading">
+	          <h2 style="color:white">Hasil Segmentasi</h2>
+	        </div>
+	        <div class="row">
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox">
+	                		<img id="blah" src="{{url_for('static', filename=hasli)}}" alt="your image" class="card-img-top" />
+	                	</a>
+	                    <div class="card-body">
+	                        <h6><a>Hasil Tanpa Preprocessing</a></h6>
+	                        <p class="text-muted card-text">{{akurasi}}</p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+						<a class="lightbox" href="../img/image2.jpg">
+		                	
+		                </a>
+	                    <div class="card-body">
+	                        <h6><a href="http://127.0.0.1:5000/">Kembali</a></h6>
+	                       
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox">
+	                		<img src="{{url_for('static', filename=hpreprocessed)}}" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6>Hasil Dengan Preprocessing</h6>
+	                        <p class="text-muted card-text">{{akurasi1}}</p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox">
+	                		<img src="{{url_for('static', filename=asli)}}" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6>Citra Asli</h6>
+	                        <p class="text-muted card-text"></p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox">
+	                		<img src="{{url_for('static', filename=preprocessed)}}" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6>Citra Hasil Preprocessing</h6>
+	                        <p class="text-muted card-text"></p>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox">
+	                		<img src="{{url_for('static', filename=gt)}}" alt="Card Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+	                        <h6>Citra Ground Truth</h6>
+	                        <p class="text-muted card-text"></p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+    </script>
+</body>
+</html>
