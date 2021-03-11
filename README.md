@@ -1,7 +1,6 @@
 # Garbage-image-segmentation
 
-This is a deep learning learning application (in this case, Pyramid Scene Parsing Network or PSPNet) for segmenting garbage image with web interface
-It can obtain over 87 percent f1-score across various scenarios:
+This is a deep learning learning application (in this case, Pyramid Scene Parsing Network or PSPNet) for segmenting garbage image with web interface. It can obtain over 87 percent f1-score across various scenarios:
 1. Using global-thresholding-image-output as input to feed the PSPNet model
 2. Using otsu-thresholding-image-output as input to feed the PSPNet model
 3. Using adaptive-mean-thresholding-image-output as input to feed the PSPNet model
